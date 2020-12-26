@@ -1,0 +1,267 @@
+*
+{
+    box-sizing: border-box;
+}
+
+#logo 
+{
+    background-color: tomato;
+    width: 100%;
+    min-height: 40px;;
+}
+
+/* navigation bar sectors */
+
+#nav
+{
+    display: flex;
+    height: 40px;
+    background-color: rgb(0, 140, 255);
+}
+
+#search
+{
+    width: 15%;
+    padding-left: 10px;
+    z-index: 10;
+}
+
+#kategorite
+{
+    width: 70%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+#llogaria
+{
+    width: 15%;
+    padding-right: 10px;
+    display: inline-block;
+}
+
+/* search function ne navigation bar */
+
+#search input
+{
+    width: 100%;
+    border: 4px inset rgb(0, 140, 255);
+    border-radius: 4px 4px 4px 4px;
+    font-size: 16px;
+    background-color: whitesmoke;
+    background-image: url("search.png");
+    background-position: 3px 3px;
+    background-repeat: no-repeat; 
+    background-size: 26px;
+    padding: 7px 19px 7px 42px;
+    letter-spacing: 1px;
+    outline-style: none;
+    transition: 0.4s ease-in-out;
+}
+
+#search input:focus
+{
+    width: 30vw;
+}
+
+/* kategorite ne navigation bar */
+
+#kategorite span
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+    color: whitesmoke;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+#kategorite span:hover 
+{
+    font-weight: bold;
+}
+
+/* llogaria ne navigation bar */
+
+#llogaria span
+{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: whitesmoke;
+}
+
+#llogaria span img
+{
+    cursor: pointer;
+}
+
+/* the body structure */
+
+.container
+{
+    display: inline-block;
+    width: 100%;
+    padding: 4%;
+    min-height: 100vh;
+}
+
+.container .col-1
+{
+    float: left;
+    width: 80%;
+    height: 1000px;
+    background-color: indianred;
+}
+
+.container .col-2
+{
+    float: left;
+    width: 20%;
+    height: 1000px;
+    background-color: pink;
+}
+
+/* the carusel */
+
+.carusel
+{
+    float: left;
+    width: 60%;
+    background-color: khaki;
+}
+
+#imgBox 
+{   
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    float: left;
+}
+
+#imgBox img
+{
+    position:absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#imgBox span
+{
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    transform: translateY(-50%);
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(116, 116, 116, 0.5);
+    cursor: pointer;
+}
+
+#imgBox :nth-child(1)
+{
+    left: 0px;
+}
+
+#imgBox :nth-child(2)
+{
+    right: 0px;
+}
+
+
+#imgnumber
+{
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#imgnumber span
+{
+    display: flex;
+    width: 10%;
+    height: 2em;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(168, 168, 168);
+    cursor: pointer;
+}
+
+#imgBox span:hover
+{
+    background-color: rgba(116, 116, 116, 0.8);
+}
+
+#imgnumber span:hover
+{
+    background-color: rgba(116, 116, 116, 0.8);
+    border: 2px inset rgba(100, 100, 100, 0.8);
+}
+
+/* the window for the news summary in the carusel */
+
+.description-window
+{
+    position: relative;
+    width: 40%;
+    float: left;
+    background-color: whitesmoke;
+}
+
+#description
+{
+    position: relative;
+    padding-top: 150%;
+}
+
+#description section 
+{
+    position: absolute;
+    top: 0%;
+    padding: 10% 5%;
+    height: 30%;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+}
+
+#description p
+{
+    position: absolute;
+    top: 30%;
+    padding: 5%;
+    height: 60%;
+    overflow: hidden;
+}
+
+#description span
+{
+    position: absolute;
+    bottom: 8%;
+    right: 15%;
+    padding: 7px 10px;
+    background-color: rgb(0, 140, 255);
+    color: whitesmoke;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#description span:hover
+{
+    background-color: rgb(16, 122, 209);
+}
+  
+  
