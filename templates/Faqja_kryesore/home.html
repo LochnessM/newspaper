@@ -56,15 +56,30 @@
             </div>
             <div class="description-window">
                 <div id="description">
-                    <section>
+                    <h3>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam architecto
-                    </section>
+                    </h3>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat laudantium consequatur harum incidunt aut quos possimus ea necessitatibus, sint quidem quis nesciunt illo maiores facere pariatur corporis iure soluta eius.                    
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt quis eius labore magnam tenetur, aliquid perspiciatis quidem quo. Delectus similique ipsa, inventore tenetur quisquam esse quam nemo minus soluta dicta voluptas vel a tempore exercitationem aspernatur aliquid neque. Dolorem assumenda odio nostrum. Excepturi, possimus earum a molestiae ex, laboriosam nobis ullam eius, quam blanditiis maiores exercitationem laborum pariatur qui molestias. Veniam accusamus deleniti, magni dignissimos distinctio inventore. Nisi molestiae obcaecati recusandae harum excepturi voluptates nesciunt quo deleniti eligendi inventore sapiente magnam eius facere, expedita ratione sunt sed cumque optio, autem explicabo aspernatur eaque sint. Repellat doloribus aut, nemo exercitationem esse ad vero ab repellendus! Atque, corrupti repudiandae exercitationem suscipit non quam praesentium iusto accusantium aliquam ad corporis nobis? Minus earum sequi doloremque aliquam id unde. Obcaecati, delectus? At, quas non.
                     </p>
                     <span>Lexoje</span>
-            </div>
-            </div>    
+                </div>
+            </div>  
+            <div>
+                {% for section in sections %}
+                <section class="seksioni"> 
+                    <h4> {{ section }}</h4>
+
+                    {% for artikull in artikujt %}
+                    <div class="card">
+                        <h4>{{ artikulli.title }}</h4>
+                        <p>{{ artikulli.desription }}</p>
+                    </div>
+                    {% endfor %}
+
+                </section>
+                {% endfor %}
+            </div>  
         </div>    
        <div class="col-2"></div>
    </div>
