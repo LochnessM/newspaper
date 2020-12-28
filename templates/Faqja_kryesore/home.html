@@ -68,21 +68,27 @@
             </div>  
 
             {% for section in sections %}
-            <h4> {{ section }} </h4>
-            <section class="seksioni"> 
+            <div class="container-1">
+                <h4> 
+                    {{ section }} 
+                    <span class="back-1"> &#60 </span>
+                    <span class="forward-1"> > </span>  
+                </h4>
+                <section class="seksioni"> 
 
-                {% for artikulli in artikujt %}
-                <div class="card">
-                    <div class="shkrimi">
-                        <h4>{{ artikulli.title }}</h4>
-                        <p>{{ artikulli.description }}</p>
-                        <h6> nga &#160  <span> {{ artikulli.author }} </span></h6>
+                    {% for artikulli in artikujt %}
+                    <div class="card">
+                        <div class="shkrimi">
+                            <h4>{{ artikulli.title }}</h4>
+                            <p>{{ artikulli.description }}</p>
+                            <h6> nga &#160  <span> {{ artikulli.author }} </span></h6>
+                        </div>
+                        <img src="{{ artikulli.image.url }}">   
                     </div>
-                    <img src="{{ artikulli.image }}">   
-                </div>
-               {% endfor %}
+                {% endfor %}
 
-           </section>
+                </section>
+            </div>
             {% endfor %}
              
         </div>    
