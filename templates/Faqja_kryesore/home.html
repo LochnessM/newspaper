@@ -54,6 +54,7 @@
                     <span>10</span>
                 </div>
             </div>
+            
             <div class="description-window">
                 <div id="description">
                     <h3>
@@ -65,21 +66,25 @@
                     <span>Lexoje</span>
                 </div>
             </div>  
-            <div>
-                {% for section in sections %}
-                <section class="seksioni"> 
-                    <h4> {{ section }}</h4>
 
-                    {% for artikull in artikujt %}
-                    <div class="card">
+            {% for section in sections %}
+            <h4> {{ section }} </h4>
+            <section class="seksioni"> 
+
+                {% for artikulli in artikujt %}
+                <div class="card">
+                    <div class="shkrimi">
                         <h4>{{ artikulli.title }}</h4>
-                        <p>{{ artikulli.desription }}</p>
+                        <p>{{ artikulli.description }}</p>
+                        <h6> nga &#160  <span> {{ artikulli.author }} </span></h6>
                     </div>
-                    {% endfor %}
+                    <img src="{{ artikulli.image }}">   
+                </div>
+               {% endfor %}
 
-                </section>
-                {% endfor %}
-            </div>  
+           </section>
+            {% endfor %}
+             
         </div>    
        <div class="col-2"></div>
    </div>

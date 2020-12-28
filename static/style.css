@@ -3,6 +3,11 @@
     box-sizing: border-box;
 }
 
+.body
+{
+    background-color: whitesmoke;
+}
+
 #logo 
 {
     background-color: tomato;
@@ -49,7 +54,6 @@
     border: 4px inset rgb(0, 140, 255);
     border-radius: 4px 4px 4px 4px;
     font-size: 16px;
-    background-color: whitesmoke;
     background-image: url("search.png");
     background-position: 3px 3px;
     background-repeat: no-repeat; 
@@ -73,7 +77,6 @@
     justify-content: center;
     align-items: center;
     padding-left: 20px;
-    color: whitesmoke;
     cursor: pointer;
     overflow: hidden;
 }
@@ -92,7 +95,6 @@
     align-items: center;
     width: 100%;
     height: 100%;
-    color: whitesmoke;
 }
 
 #llogaria span img
@@ -114,15 +116,13 @@
 {
     float: left;
     width: 80%;
-    height: 1000px;
-    background-color: indianred;
 }
 
 .container .col-2
 {
     float: left;
     width: 20%;
-    height: 1000px;
+    height: 600vh;
     background-color: pink;
 }
 
@@ -217,7 +217,6 @@
     position: relative;
     width: 40%;
     float: left;
-    background-color: whitesmoke;
 }
 
 #description
@@ -252,7 +251,6 @@
     right: 15%;
     padding: 7px 10px;
     background-color: rgb(0, 140, 255);
-    color: whitesmoke;
     border-radius: 20px;
     cursor: pointer;
 }
@@ -261,5 +259,73 @@
 {
     background-color: rgb(16, 122, 209);
 }
-  
+
+.col-1 > h4
+{
+    width: 100%;
+    margin: 0px;
+    display: block;
+    float: left;
+    padding-left: 5%;
+    height: 30px;
+    background-color: rgb(0, 140, 255);
+}
+
+.seksioni
+{
+    display: flex;
+    flex-wrap: wrap;
+    float: left;
+}
+
+.card
+{ 
+    width: 50%;
+    overflow: hidden;
+}
+
+.shkrimi
+{
+    width: 70%;
+}
+
+.shkrimi h4
+{
+    margin: 5px 5px;
+    color: black;
+}
+
+.shkrimi p 
+{
+    margin: 0px;
+    font-size: 0.9em;
+    padding: 0px 5px;
+    height: 80px;
+    overflow: hidden;
+}
+
+.shkrimi h6
+{
+    margin: 0px;
+    float: right;
+    padding: 15px 10px;
+    color: blue;
+}
+
+.shkrimi h6 span 
+{
+    color: black;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-family: cursive;
+    font-size: 1.2em;
+}
+
+.card img 
+{
+    width: 30%;
+    object-fit: contain;
+}
+
+
   
