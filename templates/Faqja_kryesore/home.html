@@ -19,17 +19,17 @@
             </form>
         </div>
        <div id="kategorite">
-           <span>Aktualitet</span>
-           <span>Politike</span>
-           <span>Ekonomi</span>
-           <span>Opinion</span>
-           <span>Sporti</span>
-           <span>Kulture</span>
+           <a href="">Aktualitet</a>
+           <a href="">Politike</a>
+           <a href="">Ekonomi</a>
+           <a href="">Opinion</a>
+           <a href="">Sporti</a>
+           <a href="">Kulture</a>
        </div>
        <div id="llogaria">
-           <span>
+           <a href="">
                <img src="{% static 'user.png' %}" width="34px">
-           </span>
+           </a>
        </div>
    </div>
 
@@ -38,20 +38,20 @@
             <div class="carusel">
                 <div id="imgBox">
                     <img src="saranda.jpeg">
-                    <span id="back">&#60</span>
-                    <span id="forward">></span>
+                    <a href="" id="back">&#60</a>
+                    <a href="" id="forward">></a>
                 </div>
                 <div id="imgnumber">
-                    <span>1</span>
-                    <span>2</span>
-                    <span>3</span>
-                    <span>4</span>
-                    <span>5</span>
-                    <span>6</span>
-                    <span>7</span>
-                    <span>8</span>
-                    <span>9</span>
-                    <span>10</span>
+                    <a href="">1</a>
+                    <a href="">2</a>
+                    <a href="">3</a>
+                    <a href="">4</a>
+                    <a href="">5</a>
+                    <a href="">6</a>
+                    <a href="">7</a>
+                    <a href="">8</a>
+                    <a href="">9</a>
+                    <a href="">10</a>
                 </div>
             </div>
             
@@ -63,25 +63,30 @@
                     <p>
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt quis eius labore magnam tenetur, aliquid perspiciatis quidem quo. Delectus similique ipsa, inventore tenetur quisquam esse quam nemo minus soluta dicta voluptas vel a tempore exercitationem aspernatur aliquid neque. Dolorem assumenda odio nostrum. Excepturi, possimus earum a molestiae ex, laboriosam nobis ullam eius, quam blanditiis maiores exercitationem laborum pariatur qui molestias. Veniam accusamus deleniti, magni dignissimos distinctio inventore. Nisi molestiae obcaecati recusandae harum excepturi voluptates nesciunt quo deleniti eligendi inventore sapiente magnam eius facere, expedita ratione sunt sed cumque optio, autem explicabo aspernatur eaque sint. Repellat doloribus aut, nemo exercitationem esse ad vero ab repellendus! Atque, corrupti repudiandae exercitationem suscipit non quam praesentium iusto accusantium aliquam ad corporis nobis? Minus earum sequi doloremque aliquam id unde. Obcaecati, delectus? At, quas non.
                     </p>
-                    <span>Lexoje</span>
+                    <a href="">Lexoje</a>
                 </div>
             </div>  
 
             {% for section in sections %}
             <div class="container-1">
-                <h4> 
-                    {{ section }} 
-                    <span class="back-1"> &#60 </span>
-                    <span class="forward-1"> > </span>  
-                </h4>
+                <div class="titulli_i_seksionit"> 
+                    <h4>{{ section }} </h4>
+                    <div>
+                        <a href=""> &#60 </a>
+                        <a href=""> > </a>
+                    </div>     
+                </div>
                 <section class="seksioni"> 
 
                     {% for artikulli in artikujt %}
                     <div class="card">
                         <div class="shkrimi">
-                            <h4>{{ artikulli.title }}</h4>
+                            <h4><a href=""> {{ artikulli.title }} </a></h4>
                             <p>{{ artikulli.description }}</p>
-                            <h6> nga &#160  <span> {{ artikulli.author }} </span></h6>
+                            <span>
+                                <h6> {{ artikulli.data }} </h6>
+                                <h6> nga &#160  <a href=""> {{ artikulli.author }} </a></h6>
+                            </span>     
                         </div>
                         <img src="{{ artikulli.image.url }}">   
                     </div>
