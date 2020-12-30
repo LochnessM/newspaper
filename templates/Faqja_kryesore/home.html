@@ -81,8 +81,8 @@
                     {% for artikulli in artikujt %}
                     <div class="card">
                         <div class="shkrimi">
-                            <h4><a href=""> {{ artikulli.title }} </a></h4>
-                            <p>{{ artikulli.description }}</p>
+                            <a href=""> <h5>{{ artikulli.title }} </h5></a>
+                            <p>{{ artikulli.description|truncatechars:150 }}</p>
                             <span>
                                 <h6> {{ artikulli.data }} </h6>
                                 <h6> nga &#160  <a href=""> {{ artikulli.author }} </a></h6>

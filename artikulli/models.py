@@ -2,8 +2,7 @@ from django.db import models
 
 
 class artikulli(models.Model):
-    zgjedhje_e_kategorise = [('Aktualitet', 'Aktualitet'),
-                            ('Politike', 'Politike'),
+    zgjedhje_e_kategorise = [('Politike', 'Politike'),
                             ('Ekonomi', 'Ekonomi'), 
                             ('Opinion', 'Opinion'),
                             ('Sporti', 'Sporti'),
