@@ -1,0 +1,35 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    
+    <title>Lajme</title>
+</head>
+<body>
+    
+<div id="logo">LOGO</div>
+   <div id="nav">
+       <div id="search">
+            <form autocomplete="off">
+                <input type="text" name="search" placeholder="Kerko..">
+            </form>
+        </div>
+       <div id="kategorite">
+           <a href="">Aktualitet</a>
+           <a href="">Politike</a>
+           <a href="">Ekonomi</a>
+           <a href="">Opinion</a>
+           <a href="">Sporti</a>
+           <a href="">Kulture</a>
+       </div>
+       <div id="llogaria">
+           <a href="">
+               <img src="{% static 'user.png' %}" width="34px">
+           </a>
+       </div>
+   </div>
