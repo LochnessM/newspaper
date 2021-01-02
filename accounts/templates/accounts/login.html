@@ -1,9 +1,11 @@
+{% for message in messages %}
 {{ message }}
+{% endfor %}
 <form method="POST" action="">
     {% csrf_token %}
     <label for="userfield" id="user"> Emri i perdoruesit: </label>
-    <input type="text" id="userfield" name="user">
+    <input type="text" id="userfield" name="username">
     <label for="passwordField" id="password"> Kodi i perdoruesit: </label>
-    <input type="password" id="passwordField" name="user">
+    <input type="password" id="passwordField" name="password">
     <input type="submit" value="Hyr">
 </form>

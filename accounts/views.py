@@ -24,5 +24,9 @@ def login_request(request):
 
 def logout_request(request):
     if request.method == 'POST':
-        logout(request, user)
-        return redirect('home')            
+        logout(request)
+        return redirect('home')  
+
+
+def dashboard(request):
+    return render(request, 'accounts/dashboard.html')             

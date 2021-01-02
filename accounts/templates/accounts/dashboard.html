@@ -1,1 +1,6 @@
 Autori
+
+<form method="POST" action="{% url 'logout_url' %}">
+    {% csrf_token %}
+    <input type="submit">
+</form>
