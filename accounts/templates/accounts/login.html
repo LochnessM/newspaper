@@ -1,1 +1,9 @@
-<form method="POST" action=""
+{{ message }}
+<form method="POST" action="">
+    {% csrf_token %}
+    <label for="userfield" id="user"> Emri i perdoruesit: </label>
+    <input type="text" id="userfield" name="user">
+    <label for="passwordField" id="password"> Kodi i perdoruesit: </label>
+    <input type="password" id="passwordField" name="user">
+    <input type="submit" value="Hyr">
+</form>
