@@ -4,3 +4,18 @@ Autori
     {% csrf_token %}
     <input type="submit">
 </form>
+
+<form method="POST" action="{% url 'add_article' %}" enctype="multipart/form-data">
+{% csrf_token %}
+<input type="text" name='title'> 
+<input type="text" name='description'>
+<select id="kategoria" name="kategoria">
+    <option value="Politike">Politike</option>
+    <option value="Ekonomi">Ekonomi</option>
+    <option value="Opinion">Opinion</option>
+    <option value="Sporti">Sporti</option>
+    <option value="Kulture">Kulture</option>
+</select>
+<input type="file" name='image' accept="image/*">
+<input type="submit">
+</form>

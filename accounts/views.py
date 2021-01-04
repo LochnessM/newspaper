@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from artikulli.models import artikulli
 
 # Create your views here.
 
@@ -29,4 +30,15 @@ def logout_request(request):
 
 
 def dashboard(request):
-    return render(request, 'accounts/dashboard.html')             
+    return render(request, 'accounts/dashboard.html')   
+
+
+def add_article(request):
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        description = request.POST.get('description')
+        kategoria = request.POST.get('kategoria')
+        image = request.FILES.get('image')
+        new_article = artikulli(author = request.user, title = title, description = description, kategoria = kategoria, image = image)
+        new_article.save()
+    return redirect('dashboard')    

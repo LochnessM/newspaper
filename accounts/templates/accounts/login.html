@@ -1,11 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'accounts/login_style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+
 {% for message in messages %}
-{{ message }}
+<h3> {{ message }} </h3>
 {% endfor %}
 <form method="POST" action="">
     {% csrf_token %}
-    <label for="userfield" id="user"> Emri i perdoruesit: </label>
-    <input type="text" id="userfield" name="username">
-    <label for="passwordField" id="password"> Kodi i perdoruesit: </label>
-    <input type="password" id="passwordField" name="password">
-    <input type="submit" value="Hyr">
-</form>
+    <div class="fusha-1">
+        <label for="userfield" id="user"> Emri i perdoruesit: </label>
+        <input type="text" id="userfield" name="username">
+    </div>
+    <div class="fusha-2">
+        <label for="passwordField" id="password"> Kodi i perdoruesit: </label>
+        <input type="password" id="passwordField" name="password">
+    </div>
+    <input type="submit" id="hyr" value="Hyr">
+</form>  
+
+</body>
+</html>
