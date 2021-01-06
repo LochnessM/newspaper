@@ -2,10 +2,11 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from artikulli.models import artikulli
+from Ardi_s_news.decorators import unauthenticated_user
 
 # Create your views here.
 
+@unauthenticated_user
 def login_request(request):
     if request.method == 'GET':
         return render(request, 'accounts/login.html')
@@ -22,23 +23,14 @@ def login_request(request):
             messages.info(request, 'Emri i perdoruesit ose fjalekalimi nuk jane te sakte!') 
             return redirect('login_url')          
 
-
+@login_required(login_url = 'login_url')
 def logout_request(request):
     if request.method == 'POST':
         logout(request)
         return redirect('home')  
 
-
+@login_required(login_url = 'login_url')
 def dashboard(request):
     return render(request, 'accounts/dashboard.html')   
 
-
-def add_article(request):
-    if request.method == 'POST':
-        title = request.POST.get('title')
-        description = request.POST.get('description')
-        kategoria = request.POST.get('kategoria')
-        image = request.FILES.get('image')
-        new_article = artikulli(author = request.user, title = title, description = description, kategoria = kategoria, image = image)
-        new_article.save()
-    return redirect('dashboard')    
+    
