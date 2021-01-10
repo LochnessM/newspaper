@@ -36,7 +36,7 @@
                 </div>
             </div>  
 
-            {% for section in sections %}
+            {% for section, artikujt in sections.items %}
             <div class="container-1">
                 <div class="titulli_i_seksionit"> 
                     <h4>{{ section }} </h4>
@@ -46,7 +46,6 @@
                     </div>     
                 </div>
                 <section class="seksioni"> 
-
                     {% for artikulli in artikujt %}
                     <div class="card">
                         <div class="shkrimi">
