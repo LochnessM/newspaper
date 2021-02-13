@@ -6,7 +6,7 @@
        <div class="col-1">
             <div class="carusel">
                 <div id="imgBox">
-                    <img src="saranda.jpeg">
+                    <img src="">
                     <a href="" id="back">&#60</a>
                     <a href="" id="forward">></a>
                 </div>
@@ -39,10 +39,10 @@
             {% for section, artikujt in sections.items %}
             <div class="container-1">
                 <div class="titulli_i_seksionit"> 
-                    <h4>{{ section }} </h4>
+                    <h4> {{ section }} </h4>
                     <div>
-                        <a href=""> &#60 </a>
-                        <a href=""> > </a>
+                        <a href="{% if artikujt.has_previous %}?{{ section }}_page={{ artikujt.previous_page_number }} {% endif %} " class="previous" id="{{ section }}_previous"> &#60 </a>
+                        <a href="{% if artikujt.has_next %}?{{ section }}_page={{ artikujt.next_page_number }} {% endif %}  " class="next" id="{{ section }}_next"> > </a>
                     </div>     
                 </div>
                 <section class="seksioni"> 
@@ -50,7 +50,7 @@
                     <div class="card">
                         <div class="shkrimi">
                             <a href=""> <h5>{{ artikulli.title }} </h5></a>
-                            <p>{{ artikulli.description|truncatechars:150 }}</p>
+                            <p> {{ artikulli.description|truncatechars:150 }} </p>
                             <span>
                                 <h6> {{ artikulli.data }} </h6>
                                 <h6> nga &#160  <a href=""> {{ artikulli.author }} </a></h6>
@@ -67,6 +67,26 @@
         </div>    
        <div class="col-2"></div>
    </div>
+
+   <script>
+       let el = document.getElementById('Aktualitet_next')
+       el.addEventListener('click', loadPage);
+
+       function loadPage(e) {
+            e.preventDefault();
+
+            let link = el.getAttribute('href');
+            console.log(link)
+            let xhr = new XMLHttpRequest();
+            xhr.open('GET', link, true );
+            xhr.onload = function () {
+                console.log(this.responseText);
+            }
+            xhr.send();
+       }
+
+   </script>
+
 
 </body>
 </html>
