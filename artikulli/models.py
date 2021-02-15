@@ -14,3 +14,12 @@ class artikulli(models.Model):
     kategoria = models.CharField(max_length=10, choices=zgjedhje_e_kategorise, blank=True) 
     data = models.DateField(auto_now_add=True)
     image = models.ImageField(upload_to='artikulli/images/', blank=True)
+    
+    def as_json(self):
+        return dict(
+            author=self.author.username,
+            title=self.title,
+            description=self.description,
+            data=str(self.data),
+            image_url=self.image.url
+        )

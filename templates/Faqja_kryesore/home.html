@@ -39,24 +39,24 @@
             {% for section, artikujt in sections.items %}
             <div class="container-1">
                 <div class="titulli_i_seksionit"> 
-                    <h4> {{ section }} </h4>
+                    <h4> {{ section|capfirst }} </h4>
                     <div>
-                        <a href="{% if artikujt.has_previous %}?{{ section }}_page={{ artikujt.previous_page_number }} {% endif %} " class="previous" id="{{ section }}_previous"> &#60 </a>
-                        <a href="{% if artikujt.has_next %}?{{ section }}_page={{ artikujt.next_page_number }} {% endif %}  " class="next" id="{{ section }}_next"> > </a>
+                        <a href="?{{ section }}_page=1" id="{{ section }}_previous"> &#60 </a>
+                        <a href="?{{ section }}_page=1" id="{{ section }}_next"> > </a>
                     </div>     
                 </div>
                 <section class="seksioni"> 
                     {% for artikulli in artikujt %}
                     <div class="card">
                         <div class="shkrimi">
-                            <a href=""> <h5>{{ artikulli.title }} </h5></a>
-                            <p> {{ artikulli.description|truncatechars:150 }} </p>
+                            <a href=""> <h5 id="{{ section }}_{{ forloop.counter }}_title">{{ artikulli.title }} </h5></a>
+                            <p id="{{ section }}_{{ forloop.counter }}_description"> {{ artikulli.description|truncatechars:150 }} </p>
                             <span>
-                                <h6> {{ artikulli.data }} </h6>
-                                <h6> nga &#160  <a href=""> {{ artikulli.author }} </a></h6>
+                                <h6 id="{{ section }}_{{ forloop.counter }}_data"> {{ artikulli.data }} </h6>
+                                <h6> nga &#160  <a href="" id="{{ section }}_{{ forloop.counter }}_author"> {{ artikulli.author }} </a></h6>
                             </span>     
                         </div>
-                        <img src="{{ artikulli.image.url }}">   
+                        <img id="{{ section }}_{{ forloop.counter }}_image" src="{{ artikulli.image.url }}">   
                     </div>
                 {% endfor %}
 
@@ -69,22 +69,36 @@
    </div>
 
    <script>
-       let el = document.getElementById('Aktualitet_next')
+       
+       
+       let el = document.getElementById('aktualitet_next')
        el.addEventListener('click', loadPage);
 
        function loadPage(e) {
             e.preventDefault();
 
             let link = el.getAttribute('href');
+            let current_page = Number(link.split('=')[1]);
+            if ( current_page < 10) {
+                link = '?aktualitet_page=' + String(current_page + 1);
+                el.href = link; 
+            }
             console.log(link)
             let xhr = new XMLHttpRequest();
             xhr.open('GET', link, true );
             xhr.onload = function () {
-                console.log(this.responseText);
+                obj = this.responseText;
+                obj = JSON.parse(obj)[0];
+                console.log(obj)
+                document.getElementById('aktualitet_title').innerHTML=obj.title;
+                document.getElementById('aktualitet_description').innerHTML=obj.description.slice(0, 150);
+                document.getElementById('aktualitet_data').innerHTML=obj.data;
+                document.getElementById('aktualitet_author').innerHTML=obj.author;
+                document.getElementById('aktualitet_image').src=obj.image_url;
             }
             xhr.send();
        }
-
+      
    </script>
 
 
